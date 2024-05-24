@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6n04vig1gxew"]
+
+[ext_resource type="Texture2D" uid="uid://ch4hksi0rsi56" path="res://resources/sprites/yarn.png" id="1_7n66e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gesm"]
+radius = 125.004
+
+[node name="yarn-ball" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-60, -21)
+texture = ExtResource("1_7n66e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5gesm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -159.0
+offset_top = -230.0
+offset_right = -13.0
+offset_bottom = -146.0
+bbcode_enabled = true
+text = "[center]test[/center]"
+fit_content = true
+autowrap_mode = 0
