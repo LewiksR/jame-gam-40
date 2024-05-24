@@ -1,6 +1,6 @@
 extends Node
 
-signal on_key_pressed(key: String)
+signal key_pressed(key: String)
 
 var _regex = RegEx.new()
 
@@ -17,5 +17,4 @@ func _input(event):
 		return
 	
 	var found_key = regex_result.get_string()
-	print(found_key)
-	on_key_pressed.emit(found_key)
+	key_pressed.emit(found_key)

@@ -12,3 +12,6 @@ func get_word(length: int) -> String:
 	
 	
 	return "fakeword"
+
+func _on_key_pressed(key: String):
+	print("Received signal: " + key)
