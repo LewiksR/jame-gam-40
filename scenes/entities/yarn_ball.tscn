@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6n04vig1gxew"]
+[gd_scene load_steps=8 format=3 uid="uid://b6n04vig1gxew"]
 
 [ext_resource type="Texture2D" uid="uid://ch4hksi0rsi56" path="res://resources/sprites/yarn.png" id="1_7n66e"]
 [ext_resource type="Script" path="res://scripts/moving_enemy.gd" id="1_eh06l"]
@@ -6,6 +6,65 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gesm"]
 radius = 50.0
+
+[sub_resource type="Animation" id="Animation_uajvk"]
+resource_name = "yarn_death"
+length = 0.5
+loop_mode = 1
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0, 0, 1.08, -0.08, 0, 0.135, 0, 1e-05, 0, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0, 0, 1.2, -0.078, 0, 0.215, 0, 1e-05, 0, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.07, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_krv8v"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ehld"]
+_data = {
+"RESET": SubResource("Animation_krv8v"),
+"yarn_death": SubResource("Animation_uajvk")
+}
 
 [node name="YarnBall" type="CharacterBody2D"]
 collision_layer = 0
@@ -21,3 +80,8 @@ shape = SubResource("CircleShape2D_5gesm")
 
 [node name="WordAction" parent="." instance=ExtResource("3_nuyg4")]
 position = Vector2(0, 49)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1ehld")
+}

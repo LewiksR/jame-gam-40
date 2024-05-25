@@ -1,5 +1,7 @@
 extends Node2D
 
+signal action_complete
+
 @export var highlight_color: Color = Color.GOLD
 var _my_word: String
 var _typed_string: String
