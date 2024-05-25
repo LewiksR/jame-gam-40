@@ -17,4 +17,4 @@ func _input(event):
 		return
 	
 	var found_key = regex_result.get_string()
-	key_pressed.emit(found_key)
+	Events.key_pressed.emit(found_key)

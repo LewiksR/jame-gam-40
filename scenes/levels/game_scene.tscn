@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://x803csjj82f1"]
+[gd_scene load_steps=3 format=3 uid="uid://x803csjj82f1"]
 
 [ext_resource type="PackedScene" uid="uid://b6n04vig1gxew" path="res://scenes/entities/yarn_ball.tscn" id="1_dr477"]
-[ext_resource type="Script" path="res://scripts/input_manager.gd" id="1_lh7ho"]
 [ext_resource type="PackedScene" uid="uid://dgcjxqcp2rnur" path="res://scenes/entities/granny.tscn" id="2_bpb5w"]
 
 [node name="game-scene" type="Node2D"]
-script = ExtResource("1_lh7ho")
 
 [node name="yarn-ball" parent="." instance=ExtResource("1_dr477")]
 position = Vector2(161, 449)

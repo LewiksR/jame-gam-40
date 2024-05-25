@@ -1,15 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6n04vig1gxew"]
+[gd_scene load_steps=5 format=3 uid="uid://b6n04vig1gxew"]
 
 [ext_resource type="Texture2D" uid="uid://ch4hksi0rsi56" path="res://resources/sprites/yarn.png" id="1_7n66e"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qkf1a"]
-[ext_resource type="FontFile" uid="uid://cp2ywotx86sf0" path="res://resources/fonts/Nanum_Gothic_Coding/NanumGothicCoding-Regular.ttf" id="2_tpabc"]
+[ext_resource type="PackedScene" uid="uid://cul1fs2ck2w2b" path="res://scenes/entities/word_action.tscn" id="3_nuyg4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gesm"]
 radius = 50.0
-
-[sub_resource type="Theme" id="Theme_s0i28"]
-default_font = ExtResource("2_tpabc")
-default_font_size = 30
 
 [node name="yarn-ball" type="CharacterBody2D"]
 collision_layer = 0
@@ -23,20 +19,5 @@ texture = ExtResource("1_7n66e")
 [node name="collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5gesm")
 
-[node name="target-word" type="RichTextLabel" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -69.0
-offset_right = 75.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 6
-theme = SubResource("Theme_s0i28")
-bbcode_enabled = true
-text = "[center]test[/center]"
-fit_content = true
-autowrap_mode = 0
+[node name="WordAction" parent="." instance=ExtResource("3_nuyg4")]
+position = Vector2(0, 49)
