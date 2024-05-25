@@ -1,12 +1,11 @@
 extends Node
 
-signal key_pressed(key: String)
-
 var _regex = RegEx.new()
 
 func _init():
 	# match only events ending in a single capital letter from A to Z
 	_regex.compile("[A-Z]{1}$")
+
 
 func _input(event):
 	if !(event is InputEventKey and event.is_pressed()):

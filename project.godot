@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*res://scripts/global/events.gd"
+InputManager="*res://scripts/global/input_manager.gd"
+WordsManager="*res://scripts/global/words_manager.gd"
 
 [display]
 

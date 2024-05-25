@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cul1fs2ck2w2b"]
+[gd_scene load_steps=3 format=3 uid="uid://cul1fs2ck2w2b"]
 
 [ext_resource type="Theme" uid="uid://b00ku03n8hovr" path="res://resources/themes/ui_theme.tres" id="1_5wccp"]
+[ext_resource type="Script" path="res://scripts/word_action.gd" id="1_c5h7w"]
 
 [node name="WordAction" type="Node2D"]
+script = ExtResource("1_c5h7w")
 
 [node name="WordLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -16,6 +19,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_5wccp")
+bbcode_enabled = true
 text = "placeholder"
 fit_content = true
 scroll_active = false

@@ -1,22 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6n04vig1gxew"]
 
 [ext_resource type="Texture2D" uid="uid://ch4hksi0rsi56" path="res://resources/sprites/yarn.png" id="1_7n66e"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qkf1a"]
+[ext_resource type="Script" path="res://scripts/moving_enemy.gd" id="1_eh06l"]
 [ext_resource type="PackedScene" uid="uid://cul1fs2ck2w2b" path="res://scenes/entities/word_action.tscn" id="3_nuyg4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gesm"]
 radius = 50.0
 
-[node name="yarn-ball" type="CharacterBody2D"]
+[node name="YarnBall" type="CharacterBody2D"]
 collision_layer = 0
-script = ExtResource("1_qkf1a")
-SPEED = 75.0
+script = ExtResource("1_eh06l")
+SPEED = 0.0
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_7n66e")
 
-[node name="collider" type="CollisionShape2D" parent="."]
+[node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5gesm")
 
 [node name="WordAction" parent="." instance=ExtResource("3_nuyg4")]

@@ -7,7 +7,7 @@
 
 [node name="yarn-ball" parent="." instance=ExtResource("1_dr477")]
 position = Vector2(161, 449)
-SPEED = 70.0
+SPEED = 40.0
 
 [node name="yarn-ball2" parent="." instance=ExtResource("1_dr477")]
 position = Vector2(80, 167)
