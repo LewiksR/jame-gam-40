@@ -25,7 +25,7 @@ func _handle_word_update(new_char: String):
 		_typed_string += new_char
 		if !_get_next_character():
 			Events.completed_word.emit(_my_word)
-			queue_free()
+			action_complete.emit()
 	else:
 		_reset_progress()
 	_update_label()

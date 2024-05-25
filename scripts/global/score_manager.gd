@@ -1,4 +1,4 @@
-extends Object
+extends Node
 
 signal score_changed(new_score: int)
 
@@ -21,8 +21,8 @@ func _get_total_score() -> int:
     return total
 
 
-func _increment_score(name: String, score: int):
-    individual_scores[name] += score
+func _increment_score(score_name: String, score: int):
+    individual_scores[score_name] += score
     score_changed.emit(_get_total_score)
 
 

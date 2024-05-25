@@ -1,4 +1,4 @@
-extends Object
+extends Node
 
 #temp
 var _next_word_index = 0

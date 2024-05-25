@@ -1,4 +1,4 @@
-extends Object
+extends Node
 
 var _regex = RegEx.new()
 
