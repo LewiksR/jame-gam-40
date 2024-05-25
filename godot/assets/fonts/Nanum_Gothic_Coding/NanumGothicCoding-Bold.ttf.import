@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://u3o4sewteqtn"
-path="res://.godot/imported/NanumGothicCoding-Bold.ttf-c7a60059a5832fdc755465a01230c4f5.fontdata"
+path="res://.godot/imported/NanumGothicCoding-Bold.ttf-2058ec4b16dbcbe0aedf9c770421aa81.fontdata"
 
 [deps]
 
-source_file="res://resources/fonts/Nanum_Gothic_Coding/NanumGothicCoding-Bold.ttf"
-dest_files=["res://.godot/imported/NanumGothicCoding-Bold.ttf-c7a60059a5832fdc755465a01230c4f5.fontdata"]
+source_file="res://assets/fonts/Nanum_Gothic_Coding/NanumGothicCoding-Bold.ttf"
+dest_files=["res://.godot/imported/NanumGothicCoding-Bold.ttf-2058ec4b16dbcbe0aedf9c770421aa81.fontdata"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://b00ku03n8hovr"]
 
-[ext_resource type="FontFile" uid="uid://u3o4sewteqtn" path="res://resources/fonts/Nanum_Gothic_Coding/NanumGothicCoding-Bold.ttf" id="1_p22kl"]
+[ext_resource type="FontFile" uid="uid://u3o4sewteqtn" path="res://assets/fonts/Nanum_Gothic_Coding/NanumGothicCoding-Bold.ttf" id="1_p22kl"]
 
 [resource]
 default_font = ExtResource("1_p22kl")

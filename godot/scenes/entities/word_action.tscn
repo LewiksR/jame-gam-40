@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cul1fs2ck2w2b"]
 
-[ext_resource type="Theme" uid="uid://b00ku03n8hovr" path="res://resources/themes/ui_theme.tres" id="1_5wccp"]
+[ext_resource type="Theme" uid="uid://b00ku03n8hovr" path="res://assets/themes/ui_theme.tres" id="1_5wccp"]
 [ext_resource type="Script" path="res://scripts/word_action.gd" id="1_c5h7w"]
 
 [node name="WordAction" type="Node2D"]
