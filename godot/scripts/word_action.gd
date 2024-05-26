@@ -3,6 +3,7 @@ extends Node2D
 signal action_complete
 
 @export var HIGHLIGHT_COLOR: Color = Color.GOLD
+@export var LABEL_TEMPLATE = "[outline_size=7][outline_color=#000000][center][color=\"#%s\"]%s[/color]%s[/center]"
 var _my_word: String
 var _typed_string: String
 @onready var label = %WordLabel
@@ -39,8 +40,7 @@ func _update_label():
 
 func _get_formatted_label_text(typed_string: String, remaining_word: String) -> String:
 	var color_string = HIGHLIGHT_COLOR.to_html(false)
-	var string_template = "[center][color=\"#%s\"]%s[/color]%s[/center]"
-	var formatted_string = string_template % [color_string, typed_string, remaining_word]
+	var formatted_string = LABEL_TEMPLATE % [color_string, typed_string, remaining_word]
 	
 	return formatted_string
 
