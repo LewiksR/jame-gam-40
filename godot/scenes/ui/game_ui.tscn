@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4yuc30ut0ew"]
+
+[ext_resource type="FontFile" uid="uid://u3o4sewteqtn" path="res://assets/fonts/Nanum_Gothic_Coding/NanumGothicCoding-Bold.ttf" id="1_i2e1j"]
+[ext_resource type="Script" path="res://scripts/game_ui.gd" id="1_koe24"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_33bgt"]
+font = ExtResource("1_i2e1j")
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_koe24")
+LABEL_TEMPLATE = "%s pts"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -215.0
+offset_right = -15.0
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "10000 pts"
+label_settings = SubResource("LabelSettings_33bgt")
+horizontal_alignment = 2
+vertical_alignment = 2
+justification_flags = 161

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cvmps1ymh2y6g" path="res://assets/sprites/granny.png" id="1_y6png"]
 
-[node name="granny" type="Node2D"]
+[node name="Granny" type="Node2D"]
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(-0.3, 0.3)
 texture = ExtResource("1_y6png")
