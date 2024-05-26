@@ -8,13 +8,11 @@ var _typed_string: String
 @onready var label = %WordLabel
 
 
-func _init():
+func _ready():
 	Events.connect(Events.on_completed_word, _on_completed_word)
 	Events.connect(Events.on_key_pressed, _on_key_pressed)
-
-
-func _ready():
-	var word_length: int = randi_range(3, 6)
+	
+	var word_length: int = randi_range(4, 6)
 	_my_word = WordsManager.get_word(word_length)
 	_update_label()
 
