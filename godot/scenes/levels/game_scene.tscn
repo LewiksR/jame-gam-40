@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://x803csjj82f1"]
+[gd_scene load_steps=8 format=3 uid="uid://x803csjj82f1"]
 
 [ext_resource type="PackedScene" uid="uid://b6n04vig1gxew" path="res://scenes/entities/yarn_ball.tscn" id="1_dr477"]
 [ext_resource type="Texture2D" uid="uid://dylffjc7n4156" path="res://assets/sprites/background.png" id="1_o08q4"]
 [ext_resource type="PackedScene" uid="uid://dgcjxqcp2rnur" path="res://scenes/entities/granny.tscn" id="2_bpb5w"]
 [ext_resource type="PackedScene" uid="uid://b4yuc30ut0ew" path="res://scenes/ui/game_ui.tscn" id="3_22pf7"]
 [ext_resource type="Texture2D" uid="uid://duh3r73xh4wya" path="res://assets/sprites/cookies.png" id="5_27tsw"]
+[ext_resource type="PackedScene" uid="uid://bo8d283enuwra" path="res://scenes/entities/enemy_controller.tscn" id="6_a2wvs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3tqb3"]
+radius = 59.0
 
 [node name="GameScene" type="Node2D"]
 
@@ -23,19 +27,34 @@ grow_horizontal = 1
 grow_vertical = 1
 size_flags_horizontal = 4
 
-[node name="yarn-ball" parent="." instance=ExtResource("1_dr477")]
-position = Vector2(161, 449)
-SPEED = 40.0
-
-[node name="yarn-ball2" parent="." instance=ExtResource("1_dr477")]
-position = Vector2(80, 167)
-
-[node name="yarn-ball3" parent="." instance=ExtResource("1_dr477")]
-position = Vector2(321, 292)
-
 [node name="Granny" parent="." instance=ExtResource("2_bpb5w")]
 position = Vector2(631, 263)
 
-[node name="Cookies" type="Sprite2D" parent="."]
-position = Vector2(475, 262)
+[node name="Cookies" type="StaticBody2D" parent="."]
+position = Vector2(830, 229)
+
+[node name="Sprite" type="Sprite2D" parent="Cookies"]
 texture = ExtResource("5_27tsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cookies"]
+shape = SubResource("CircleShape2D_3tqb3")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SpawnPoint" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-103, 384)
+
+[node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-68, 468)
+
+[node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-198, 443)
+
+[node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-146, 542)
+
+[node name="EnemyController" parent="." node_paths=PackedStringArray("COOKIES", "SPAWN_POINTS") instance=ExtResource("6_a2wvs")]
+COOKIES = NodePath("../Cookies")
+ENEMY_SCENE = ExtResource("1_dr477")
+SPAWN_POINTS = [NodePath("../SpawnPoints/SpawnPoint"), NodePath("../SpawnPoints/SpawnPoint2"), NodePath("../SpawnPoints/SpawnPoint3"), NodePath("../SpawnPoints/SpawnPoint4")]
+TIME_TO_FIRST_WAVE = 1.5

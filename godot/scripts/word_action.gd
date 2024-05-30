@@ -32,6 +32,7 @@ func _handle_word_update(new_char: String):
 
 func _reset_progress():
 	_typed_string = ""
+	_update_label()
 
 
 func _update_label():

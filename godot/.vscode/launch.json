@@ -8,7 +8,7 @@
             "name": "GDScript: Launch Project",
             "type": "godot",
             "request": "launch",
-            "project": "${workspaceFolder}/godot",
+            "project": "${workspaceFolder}",
             "debug_collisions": false,
             "debug_paths": false,
             "debug_navigation": false,
