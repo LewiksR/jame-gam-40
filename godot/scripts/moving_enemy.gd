@@ -12,7 +12,11 @@ func _physics_process(delta):
 	velocity = Vector2(SPEED, 0).rotated(angle_to_target)
 	var collision := move_and_collide(velocity * delta)
 	if collision:
-		Events.game_over.emit()
+		_capture_cookies()
+
+
+func _capture_cookies():
+	Events.game_over.emit()
 
 
 func _on_action_complete():

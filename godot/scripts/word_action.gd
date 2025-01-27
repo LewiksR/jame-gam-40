@@ -6,6 +6,7 @@ signal action_complete
 @export var LABEL_TEMPLATE = "[outline_size=7][outline_color=#000000][center][color=\"#%s\"]%s[/color]%s[/center]"
 var _my_word: String
 var _typed_string: String
+var _trigger_reset_next_frame: bool = false
 @onready var label = %WordLabel
 
 
@@ -16,6 +17,12 @@ func _ready():
 	var word_length: int = randi_range(4, 6)
 	_my_word = WordsManager.get_word(word_length)
 	_update_label()
+
+
+func _process(_delta):
+	if _trigger_reset_next_frame:
+		_trigger_reset_next_frame = false
+		_reset_progress()
 
 
 func _handle_word_update(new_char: String):
@@ -59,7 +66,7 @@ func _get_next_character() -> String:
 
 func _on_completed_word(word: String):
 	if word != _my_word:
-		_reset_progress()
+		_trigger_reset_next_frame = true
 
 
 func _on_key_pressed(key: String):
